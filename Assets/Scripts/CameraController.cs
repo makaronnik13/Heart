@@ -7,6 +7,7 @@ public class CameraController : Singleton<CameraController> {
 
     private float angle = 0;
     public float zoomOut = 1;
+    public float deltaAngle = 0;
 
     public FocusPoint currentPoint;
 
@@ -15,6 +16,7 @@ public class CameraController : Singleton<CameraController> {
     {
         angle = 0;
         currentPoint = previousPoint;
+        deltaAngle = 0;
     }
 
     private void Start()
@@ -67,7 +69,29 @@ public class CameraController : Singleton<CameraController> {
         //pc rotate input
         if (currentPoint.enableRotation)
         {
-            angle -= Input.GetAxis("Horizontal");
+            if (currentPoint.clampRotation)
+            {
+                if (deltaAngle > currentPoint.minRotation && deltaAngle < currentPoint.maxRotation)
+                {
+                    Rotate();
+                }
+                else
+                {
+                    if (deltaAngle<= currentPoint.minRotation && Input.GetAxis("Horizontal")<0)
+                    {
+                        Rotate();
+                    }
+                    if (deltaAngle >= currentPoint.maxRotation && Input.GetAxis("Horizontal") > 0)
+                    {
+                        Rotate();
+                    }
+                }
+            }
+            else
+            {
+                Rotate();
+            }
+            
         }
 
        
@@ -79,5 +103,11 @@ public class CameraController : Singleton<CameraController> {
         dir = Quaternion.Euler(angles) * dir; // rotate it
         point = dir + pivot; // calculate rotated point
         return point; // return it
+    }
+
+    private void Rotate()
+    {
+        deltaAngle -= Input.GetAxis("Horizontal");
+        angle -= Input.GetAxis("Horizontal");
     }
 }

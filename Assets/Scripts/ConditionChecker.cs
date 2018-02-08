@@ -29,4 +29,12 @@ public class ConditionChecker: MonoBehaviour
 
         }
     }
+
+    protected void TestCheck(bool val)
+    {
+        if (val)
+        {
+            Debug.Log("checked on "+gameObject);
+        }
+    }
 }

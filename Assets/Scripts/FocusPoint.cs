@@ -9,6 +9,10 @@ public class FocusPoint: MonoBehaviour
     public bool enableRotation;
     public FocusPoint previousPoint;
 
+    public float maxRotation = 90;
+    public float minRotation = -90;
+    public bool clampRotation = false;
+
     private void Start()
     {
         foreach (Collider c in GetComponentsInChildren<Collider>())
