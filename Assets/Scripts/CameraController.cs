@@ -8,12 +8,14 @@ public class CameraController : Singleton<CameraController> {
     private float angle = 0;
     public float zoomOut = 1;
     public float deltaAngle = 0;
+    private float time = 0;
 
     public FocusPoint currentPoint;
 
 
     public void SetPoint(FocusPoint previousPoint)
     {
+        time = 0;
         angle = 0;
         currentPoint = previousPoint;
         deltaAngle = 0;
@@ -27,9 +29,11 @@ public class CameraController : Singleton<CameraController> {
     // Update is called once per frame
     void Update ()
     {
-        transform.localPosition = Vector3.Lerp(transform.localPosition, RotatePointAroundPivot(currentPoint.transform.TransformPoint(currentPoint.localOffset), currentPoint.transform.position, Vector3.up*angle), Time.deltaTime/2);
-        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(currentPoint.transform.position - transform.position), Time.deltaTime*5);
-        Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, currentPoint.fow, Time.deltaTime/2);
+        time += Time.deltaTime/10;
+
+        transform.localPosition = Vector3.Lerp(transform.localPosition, RotatePointAroundPivot(currentPoint.transform.TransformPoint(currentPoint.localOffset), currentPoint.transform.position, Vector3.up*angle), time/4);
+        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(currentPoint.transform.position - transform.position), time);
+        Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, currentPoint.fow, time);
 
         //mobile input zoom
         if (currentPoint.previousPoint && Input.touchCount ==2 )
@@ -109,5 +113,11 @@ public class CameraController : Singleton<CameraController> {
     {
         deltaAngle -= Input.GetAxis("Horizontal");
         angle -= Input.GetAxis("Horizontal");
+    }
+
+    public void Rotate(float angle)
+    {
+        deltaAngle -= angle;
+        this.angle -= angle;
     }
 }

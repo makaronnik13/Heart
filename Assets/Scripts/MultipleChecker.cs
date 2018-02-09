@@ -8,7 +8,8 @@ public class MultipleChecker : ConditionChecker {
     public ConditionChecker[] checkers;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
         foreach (ConditionChecker c in checkers)
         {
             c.onChecked.AddListener(Checked);

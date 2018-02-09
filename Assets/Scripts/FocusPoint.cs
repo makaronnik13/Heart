@@ -24,6 +24,11 @@ public class FocusPoint: MonoBehaviour
         }
     }
 
+    public void Deactivate(float time)
+    {
+        Invoke("Deactivate", time);
+    }
+
     public void Deactivate()
     {
         foreach (Collider c in GetComponentsInChildren<Collider>())
@@ -40,6 +45,11 @@ public class FocusPoint: MonoBehaviour
         }
 
         OnExit.Invoke();
+    }
+
+    public void Activate(float time)
+    {
+        Invoke("Activate", time);
     }
 
     public void Activate()
