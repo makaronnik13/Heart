@@ -5,25 +5,24 @@ using UnityEngine;
 public class PhotoRingChecker : ConditionChecker
 {
     public float rotSpeed = 1;
-    private Vector2 lastMousePosition;
+    private Vector2 lastPosition;
 
 
     private void OnMouseDown()
     {
-        lastMousePosition = Input.mousePosition;
+		RaycastHit hit;
+		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+		if (Physics.Raycast (ray, out hit)) 
+		{
+			lastPosition = hit.collider.transform.InverseTransformPoint(hit.point);
+		}
     }
 
     void OnMouseDrag()
     {
-        Vector3 currentMousePosition = Input.mousePosition;
-
-        float rotation = Vector2.SignedAngle(lastMousePosition, currentMousePosition);
-
-        //Quaternion initialRotation = transform.localRotation;
-        transform.Rotate(Vector3.forward, -rotation*rotSpeed*1000, Space.Self);
-
-       // transform.localRotation = Quaternion.Lerp(initialRotation, transform.localRotation, Time.deltaTime);
-
-        lastMousePosition = currentMousePosition;
+		Vector3 newPosition = Camera.main.ScreenToWorldPoint (new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y")));
+		newPosition = transform.InverseTransformVector (newPosition);
+		Debug.Log (newPosition*1000);
     }
 }

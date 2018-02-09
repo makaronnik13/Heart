@@ -7,7 +7,7 @@ public class ConditionChecker: MonoBehaviour
     public MonoBehaviour[] disablingScripts;
     public Collider[] disablingColliders;
 
-    [HideInInspector]
+   // [HideInInspector]
     public bool On = false;
 
     protected void Check(bool val)
