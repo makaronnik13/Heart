@@ -10,6 +10,10 @@ public class PushingItem : MonoBehaviour
 
     void OnMouseDown()
     {
+        if (GetComponent<AudioSource>())
+        {
+            GetComponent<AudioSource>().PlayOneShot(GetComponent<AudioSource>().clip);
+        }
         pushEvent.Invoke();
     }
 }

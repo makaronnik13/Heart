@@ -67,7 +67,7 @@ public class CameraController : Singleton<CameraController> {
         //mobile rotate input
         if (currentPoint.enableRotation && Input.touchCount == 1)
         {
-            angle += Input.GetTouch(0).deltaPosition.x;
+            angle += Input.GetTouch(0).deltaPosition.x/10;
         }
 
         //pc rotate input

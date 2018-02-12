@@ -16,7 +16,7 @@ MonoBehaviour:
     m_Settings:
       mode: 0
       depth:
-        scale: 1
+        scale: 0.641
       motionVectors:
         sourceOpacity: 1
         motionImageOpacity: 0
@@ -69,19 +69,19 @@ MonoBehaviour:
       screenEdgeMask:
         intensity: 0.03
   depthOfField:
-    m_Enabled: 1
+    m_Enabled: 0
     m_Settings:
-      focusDistance: 2.3
-      aperture: 0.8
-      focalLength: 3
-      useCameraFov: 0
+      focusDistance: 0.25
+      aperture: 5.8
+      focalLength: 17
+      useCameraFov: 1
       kernelSize: 0
   motionBlur:
     m_Enabled: 0
     m_Settings:
-      shutterAngle: 270
-      sampleCount: 10
-      frameBlending: 0
+      shutterAngle: 360
+      sampleCount: 30
+      frameBlending: 0.749
   eyeAdaptation:
     m_Enabled: 0
     m_Settings:
@@ -97,12 +97,12 @@ MonoBehaviour:
       logMin: -8
       logMax: 4
   bloom:
-    m_Enabled: 1
+    m_Enabled: 0
     m_Settings:
       bloom:
         intensity: 1.24
         threshold: 1.03
-        softKnee: 0.433
+        softKnee: 0.358
         radius: 4
         antiFlicker: 0
       lensDirt:

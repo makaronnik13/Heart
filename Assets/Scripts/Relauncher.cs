@@ -28,7 +28,7 @@ public class Relauncher : MonoBehaviour {
     {
         if (finishing)
         {
-            GetComponent<CameraController>().Rotate(1f);
+            GetComponent<CameraController>().Rotate(0.2f);
         }
     }
 }

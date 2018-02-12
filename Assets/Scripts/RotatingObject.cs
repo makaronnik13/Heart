@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RotatingObject : ConditionChecker {
 
+
+    private AudioSource source;
     public Transform targetTransform;
     public float rotSpeed = 1;
     private float rot = 0;
@@ -15,12 +17,21 @@ public class RotatingObject : ConditionChecker {
         {
             targetTransform = transform;
         }
+        source = GetComponent<AudioSource>();
     }
 
     void OnMouseDrag()
     {
-
         float rotY = Input.GetAxis("Mouse Y") * rotSpeed*1000 * Mathf.Deg2Rad;
+
+        if (rotY == 0)
+        {
+            source.pitch = 0;
+        }
+        else
+        {
+            source.pitch = 1;
+        }
 
         if ((rotY>0 && rot>minRot) || (rotY < 0 && rot<maxRot))
         {
@@ -29,7 +40,10 @@ public class RotatingObject : ConditionChecker {
 
             Check(rot >= maxRot);
         }
+    }
 
-         
+    private void OnMouseUp()
+    {
+        source.pitch = 0;
     }
 }

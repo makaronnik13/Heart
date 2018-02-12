@@ -52,7 +52,7 @@ public class MusicBoxHandle : ConditionChecker
         {
             aimTransform.Rotate(Vector3.forward * (lastAng - ang), Space.Self);
             speed += (lastAng - ang) * 0.0003f;
-            val += 0.003f;
+            val += 0.006f;
             source.pitch = 1;
         }
         else

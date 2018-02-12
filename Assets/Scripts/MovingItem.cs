@@ -8,7 +8,7 @@ public class MovingItem : ConditionChecker {
     public float maxY = 1;
     public bool inverce = false;
     private bool stack = false;
-
+    private AudioSource source;
     public float needVal;
 
     public Transform targetTransform;
@@ -21,7 +21,8 @@ public class MovingItem : ConditionChecker {
         if (!targetTransform)
         {
             targetTransform = transform;
-        }    
+        }
+        source = GetComponent<AudioSource>();
     }
 
     void OnMouseDrag()
@@ -31,6 +32,15 @@ public class MovingItem : ConditionChecker {
             return;
         }
         float rotY = Input.GetAxis("Mouse Y") * movSpeed;
+
+        if (rotY == 0)
+        {
+            source.pitch = 0;
+        }
+        else
+        {
+            source.pitch = 1;
+        }
 
         if (inverce)
         {
@@ -49,4 +59,8 @@ public class MovingItem : ConditionChecker {
         }
     }
 
+    private void OnMouseUp()
+    {
+        source.pitch = 0;
+    }
 }

@@ -28,6 +28,14 @@ public class MultipleChecker : ConditionChecker {
         }
 
         Check(on);
+
+        if (on)
+        {
+            foreach (ConditionChecker c in checkers)
+            {
+                c.onChecked.RemoveListener(Checked);
+            }
+        }
     }
 
     public void Test()

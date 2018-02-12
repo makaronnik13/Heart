@@ -1,0 +1,162 @@
+fileFormatVersion: 2
+guid: 1b99546ca9ab3724899a0bcdaa162f00
+timeCreated: 1518440057
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Bottom
+    100002: BottomPart
+    100004: BottomWood
+    100006: CapTopVelvet
+    100008: Core
+    100010: CoreWood
+    100012: GemsBottom
+    100014: GemsSide
+    100016: GemsSide.001
+    100018: //RootNode
+    100020: HeartPart.001
+    100022: Side.000
+    100024: Side.001
+    100026: SideInside
+    400000: Bottom
+    400002: BottomPart
+    400004: BottomWood
+    400006: CapTopVelvet
+    400008: Core
+    400010: CoreWood
+    400012: GemsBottom
+    400014: GemsSide
+    400016: GemsSide.001
+    400018: //RootNode
+    400020: HeartPart.001
+    400022: Side.000
+    400024: Side.001
+    400026: SideInside
+    2100000: Material.015
+    2100002: Material.014
+    2100004: Material.006
+    2100006: Material.007
+    2100008: Material.009
+    2100010: Material.010
+    2100012: Material.016
+    2100014: Material.013
+    2300000: Bottom
+    2300002: BottomPart
+    2300004: BottomWood
+    2300006: CapTopVelvet
+    2300008: Core
+    2300010: CoreWood
+    2300012: GemsBottom
+    2300014: GemsSide
+    2300016: GemsSide.001
+    2300018: HeartPart.001
+    2300020: Side.000
+    2300022: Side.001
+    2300024: SideInside
+    3300000: Bottom
+    3300002: BottomPart
+    3300004: BottomWood
+    3300006: CapTopVelvet
+    3300008: Core
+    3300010: CoreWood
+    3300012: GemsBottom
+    3300014: GemsSide
+    3300016: GemsSide.001
+    3300018: HeartPart.001
+    3300020: Side.000
+    3300022: Side.001
+    3300024: SideInside
+    4300000: GemsBottom
+    4300002: GemsSide
+    4300004: BottomPart
+    4300006: Bottom
+    4300008: BottomWood
+    4300010: Core
+    4300012: CoreWood
+    4300014: SideInside
+    4300016: CapTopVelvet
+    4300018: Side.001
+    4300020: Side.000
+    4300022: HeartPart.001
+    4300024: GemsSide.001
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

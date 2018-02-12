@@ -8,6 +8,7 @@ public class ObjectRotator : ConditionChecker
 	public float needVal;
     public Transform aimTransform;
     public bool inverse = false;
+    private AudioSource source;
 
     private void Awake()
     {
@@ -15,6 +16,7 @@ public class ObjectRotator : ConditionChecker
         {
             aimTransform = transform;
         }
+        source = GetComponent<AudioSource>();
     }
 
     void OnMouseDown(){
@@ -35,6 +37,15 @@ public class ObjectRotator : ConditionChecker
             ang = -ang;
         }
 
+        if (lastAng - ang == 0)
+        {
+            source.pitch = 0;
+        }
+        else
+        {
+            source.pitch = 1;
+        }
+
         aimTransform.Rotate(Vector3.forward*(lastAng-ang), Space.Self);
 
 		lastAng = ang;
@@ -51,5 +62,9 @@ public class ObjectRotator : ConditionChecker
 
 		Check(Mathf.Abs(rot- needVal)<5);
 	}
-		
+
+    private void OnMouseUp()
+    {
+        source.pitch = 0;
+    }
 }
