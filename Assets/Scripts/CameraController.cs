@@ -35,6 +35,11 @@ public class CameraController : Singleton<CameraController> {
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(currentPoint.transform.position - transform.position), time);
         Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, currentPoint.fow, time);
 
+        if (Tapper.Instance.draggingGo)
+        {
+            return;
+        }
+
         //mobile input zoom
         if (currentPoint.previousPoint && Input.touchCount ==2 )
         {

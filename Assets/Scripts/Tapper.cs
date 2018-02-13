@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tapper : MonoBehaviour {
+public class Tapper : Singleton<Tapper> {
 
-    private GameObject draggingGo;
+    public GameObject draggingGo;
 
     // Update is called once per frame
     void Update()
@@ -18,7 +18,10 @@ public class Tapper : MonoBehaviour {
                 if (Physics.Raycast(ray, out hit))
                 {
                     hit.transform.gameObject.SendMessage("OnMouseDown");
-                    draggingGo = hit.transform.gameObject;
+                    if (hit.transform.gameObject.layer != 8)
+                    {
+                        draggingGo = hit.transform.gameObject;
+                    }
                 }
             }
         }
@@ -36,7 +39,7 @@ public class Tapper : MonoBehaviour {
         {
             if (Input.GetTouch(i).phase == TouchPhase.Moved)
             {
-                if (draggingGo)
+                if (draggingGo && draggingGo.name!= "HandleWood")
                 {
                     draggingGo.SendMessage("OnMouseDrag");
                 }

@@ -33,6 +33,7 @@ public class MusicBoxHandle : ConditionChecker
 
     private void OnMouseUp()
     {
+        DebugText.Instance.Log("mouse up");
         if (val < 1)
         {
             source.pitch = 0;
@@ -52,7 +53,7 @@ public class MusicBoxHandle : ConditionChecker
         {
             aimTransform.Rotate(Vector3.forward * (lastAng - ang), Space.Self);
             speed += (lastAng - ang) * 0.0003f;
-            val += 0.006f;
+            val += 0.003f;
             source.pitch = 1;
         }
         else
@@ -63,6 +64,8 @@ public class MusicBoxHandle : ConditionChecker
                 val = Mathf.Lerp(val, 0, Time.deltaTime * 2);
             }
         }
+
+        DebugText.Instance.Log(val+"");
 
         Check(val>=1);
 

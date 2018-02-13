@@ -14,17 +14,18 @@ public class PanelsChecker : ConditionChecker {
     {
         if (pushedButtons.Contains(go))
         {
-            Debug.Log("contain");
-            go.GetComponentInParent<Animator>().ResetTrigger("Active");
             return;
         }
 
-        Debug.Log(go.GetComponentInChildren<Text>().text[0]+" " + messge[position]);
+
         if (go.GetComponentInChildren<Text>().text[0] != messge[position])
         {
             foreach (Animator a in GetComponentsInChildren<Animator>())
             {
-                a.SetTrigger("Deactive");
+                if (a.GetCurrentAnimatorStateInfo(0).IsName("LetterButton") || a.gameObject == go.transform.parent.gameObject)
+                {
+                    a.SetTrigger("Deactive");
+                }
             }
             position = 0;
             pushedButtons.Clear();
@@ -34,6 +35,7 @@ public class PanelsChecker : ConditionChecker {
             position++;
             pushedButtons.Add(go);
         }
+        
     }
 
     private void Update()

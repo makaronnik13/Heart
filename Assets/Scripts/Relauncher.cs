@@ -16,12 +16,12 @@ public class Relauncher : MonoBehaviour {
         {
             c.enabled = false;
         }
-        Invoke("ReloadScene", 20);
+        Invoke("ReloadScene", 65);
     }
 
     private void ReloadScene()
     {
-        SceneManager.LoadSceneAsync(0);
+        SceneManager.LoadScene(1);
     }
 
     private void Update()

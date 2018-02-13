@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Name: VuforiaConfiguration
   m_EditorClassIdentifier: 
   vuforia:
-    vuforiaLicenseKey: 
-    ufoLicenseKey: QVg0S3dPVC8vLy8vQUFBQUtIeU9XYmphVmtKOW1sRzRJaHJtemMxcVVEbU1DM0RVOWdVM0liSGdRdmFRVU9FZXJYZ1dVbWVyQ1ZKMmRmaFVBUXBTUTBVSTRJb3g1RnBTZ2ZFSmlMWWFtOGExTmNNWFZyMGJKZkxZRFliN29TZHZvR0phdEtMRUxuQ0YwNmlZVkhjWDhxbFA3Y3pSc3dkNktJNWFZaWRLcGgzeklUQ2ZCcU5oajBRYldzSnBqbGVScnJGWDVxS1BLb1Rzei9lRHl6QnpoOUxSL2NzanJmcy9GTUpPSWNGWFJ5Ui9MZ3h5MC94dGJ6cFJzU3E5Y2FtaGpraWE4S3RMUUNRdUF0QlZDVVhGc0dZWW5qVCtpYUdpU01zYlZYYmwrSGovV3R5TEhyZ1ZnVmViVTNiNmlZaVVWeG5JNXFoZVIzQTRxcUo0Q0d3T2tUcEQyeFozVEk1Tk5ZaEl5RlBEbTNxR2ZodWhvQzl3Sng0Rk5FbWM=
+    vuforiaLicenseKey: AYQb7Yn/////AAAAmdhWXL/DmUn4kvG9IDdFvYdIXvkKhN7tGBFajgLQN6O/bNt5AzfA0O5xeo9uecSgK08qmVQ7+uEWFiFTS24wiFxptmC/6w4OgDU8KSNHgE1+EKBj1v1UEA56GRyu/Ohpa8tO7iSc77Jplwytb3Vql4WuNfJC1lKdbJdx/0eeD+vq9FBhOqjhGYG+N3OtOq6Chd9bd3YfdlTrEGplKaSV42qYShcYxf2I4+tuDFTNSk2TxrM88Vj0DiDLn13PSAwhCi0eEKzJDoDfSaM00i0PxKpqhM03Q91suZWUvbwY994Jtq1BsRxV6AiI7f6aidsP6G8/ibzqmiwAEjsbSTLDFLEGQmAJeWB/IufyDUXDyqB/
+    ufoLicenseKey: QVloY2V4ci8vLy8vQUFBQUtKUXpaM2FXTkVLam1tdjlxUDAvZmlsWWNwOU8xelZPUGR2NXZmYnkwL2JFdXZ4SDNsZXpBTDV2a0FGSE4xdVkrSG5wemQrVzQvT0VNakFvbVdUN3FMUFRHTkkrYXpqV2JGVm4rTHpkTlpONE9yWUI2K1B6WnE0SmIzWUE0cE1HNW5GZG9RY0VQYWtGK3c4Q05vZ0hacU1OWWNYMklCUmdwZXQxSHEwVElCcTBRU0lucm1vb0xEdWhyL2FsaU9QVm9NaVVGYWhhMjNPUlJsMTROMjRiZXZLOE0xa0YreFVZeGdOQ3h3MEt1V0RYeWlYdlNoR2tIMFpNQkN3aUExZzFxYzN6cEk1VEJDbnZkMW1PM05UdG1pQklHTGhDeEErdTZPTjRjOUdXN1p1di9HaWFLamVvaG5KL0Q1VnQxZ2p3MTRvekErTXNtNFRVSUFaL1lqVUloeHdZKzQvZmFMbWd1QTNqVHFIdkVEQnQ=
     delayedInitialization: 0
     cameraDeviceModeSetting: -1
     maxSimultaneousImageTargets: 1
@@ -27,8 +27,8 @@ MonoBehaviour:
     eyewearType: 0
     stereoFramework: 0
     seeThroughConfiguration: 0
-    viewerName: 
-    viewerManufacturer: 
+    viewerName: Generic Cardboard
+    viewerManufacturer: Vuforia
     useCustomViewer: 0
     customViewer:
       Version: 0
@@ -45,8 +45,12 @@ MonoBehaviour:
   databaseLoad:
     dataSetsToLoad:
     - VuforiaMars_Images
+    - Heart_OT
+    - heartnBottle_OT
     dataSetsToActivate:
     - VuforiaMars_Images
+    - Heart_OT
+    - heartnBottle_OT
   videoBackground:
     clippingMode: 0
     numDivisions: 2
